@@ -6,10 +6,10 @@
 #num2 - значение условия делимости с остатком
 #summa - значение условия границы суммы цифр
 
-def Myfunk(start = 0, finish = 1000, num1 = 1, num2 = 2, summa = 10):
+def my_funk(start = 0, finish = 1000, num1 = 1, num2 = 2, summa = 10):
     "Выводит числа в определённых границах, с условиями делимости с остатком и без, сумма цифр в которых меньше заданного"
-    a=[sum([int(str(i)[j]) for j in range(len(str(i)))]) < summa and i for i in range(start, finish + 1, num1) if i % num2 != 0] #список чисел с 3-мя услов, но лишними False
+    a = [ sum( [ int( str(i)[j] ) for j in range( len( str(i) ) ) ] ) < summa and i for i in range(start, finish + 1, num1) if i % num2 != 0 ] #список чисел с 3-мя услов, но лишними False
     for i in range(a.count(False)): # удаляем лишние False
         a.remove(False)
     print(*a)
-Myfunk()
+my_funk()

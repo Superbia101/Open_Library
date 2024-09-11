@@ -29,9 +29,9 @@ def division(divi = 2, rem = 1, num = 10):
     if rem >= divi:
         print("Таких чисел не существует!")
     else:
-        i=0 # число для проверки
+        i = 0 # число для проверки
         while len(List) < num:
-            i+=1 # возрастание
+            i += 1 # возрастание
             if i % divi == rem: # проверка на условия
                 List.append(i)
         print(List)

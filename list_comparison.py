@@ -1,4 +1,4 @@
-def list_comparison(a,b):
+def list_comparison(a, b):
     "сравниваются (на предмет равенства) два числовых списка"
     x = 0
     if len(a) == len(b): # сравнивается длина
@@ -13,4 +13,4 @@ def list_comparison(a,b):
 
 a = [1, 2, 0, 6]
 b = [1, 2, 5, 6]
-list_comparison(a,b)
+list_comparison(a, b)

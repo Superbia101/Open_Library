@@ -1,5 +1,5 @@
 from random import *  
-def Mylist(n,m):
+def my_list(n, m):
     "Создаёт и выводит вложеный список n на m, заполн. случ. буквами"
     a = [[0] * m for i in range(n)]
     for i in range(n):
@@ -9,4 +9,4 @@ def Mylist(n,m):
         print(' '.join(row))
 n, m = 4, 4
 seed(2024)
-Mylist(n, m)
+my_list(n, m)
