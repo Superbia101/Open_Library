@@ -6,16 +6,16 @@ def second_max(A, first = False):
 
 def second_max_modified(A):
     "Функция возвращает первый и второй максимум и, их индексы из списка"
-    first, second = A[ : 2 ]
+    first, second = A[:2] # берём первое и второе значение из списка
     f_index, s_index = 0, 1 # значения индексов 
-    if first < second:
+    if first < second: # распределяем их
         first, second = second, first
         f_index, s_index = 1, 0
-    for i in range(2, len(A)):
+    for i in range(2, len(A)): # сравниваем все значения с 1-вым макс 
         if first < A[i]:
-            first, second = A[i], first
-            f_index, s_index = i, f_index
-        elif second < A[i]:
+            first, second = A[i], first # заменяем на большие
+            f_index, s_index = i, f_index # их индексы тоже
+        elif second < A[i]: # сравниваем 2-той 
             second = A[i]
             s_index = i
     return [(first, f_index), (second, s_index)]
