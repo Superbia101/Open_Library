@@ -1,9 +1,9 @@
 from random import *  
-def my_list(n, m):
+def my_list(line, column):
     "Создаёт и выводит вложеный список n на m, заполн. случ. буквами"
-    a = [[0] * m for i in range(n)]
-    for i in range(n):
-        for j in range(m):
+    a = [[0] * column for i in range(line)]
+    for i in range(line):
+        for j in range(column):
             a[i][j] = chr(randint(ord('A'), ord('Z')))
     for row in a:
         print(' '.join(row))
