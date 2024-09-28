@@ -23,18 +23,22 @@ print(third)"""
 #rem - остаток
 #num - кол-во
 
-def division(divi = 2, rem = 1, num = 10):
-    "выводит список из нечётных чисел, с параметрами - чисел с опред. остатком от опред. делителя"
-    List = []
+
+def division(divi: int = 2, rem: int = 1, num: int = 10):
+    """выводит список из нечётных чисел, с параметрами - чисел с опред. остатком от опред. делителя"""
+    list_num: list[int] = []
     if rem >= divi:
         print("Таких чисел не существует!")
     else:
-        i = 0 # число для проверки
-        while len(List) < num:
-            i += 1 # возрастание
-            if i % divi == rem: # проверка на условия
-                List.append(i)
-        print(List)
+        temp: int = 0 # число для проверки
+        while len(list_num) < num:
+            temp += 1 # возрастание
+            if temp % divi == rem: # проверка на условия
+                list_num.append(temp)
+        print(list_num)
+
+
+
 
 try:
     divi = int(input("При делении на что (больше нуля)? "))

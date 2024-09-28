@@ -1,6 +1,9 @@
-def comparison_real_numbers(num: float, num_2: float, num_3: float):
+def comparison_real_numbers(namber_sum_1: float, namber_sum_2: float, namber_raz: float):
     """сравн. сумму двух вещ. чисел с третьим с точностью: до 15-го знака"""
-    print('\n', abs((num + num_2) - num_3) < 1e-15)
+    print('\n', abs((namber_sum_1 + namber_sum_2) - namber_raz) < 1e-15)
+
+
+
 
 num = 1.1
 num_2 = 2.2

@@ -1,6 +1,8 @@
-def sum_nech(N):
-    "Функция сумирует неч числа до N"
-    a=[i for i in range(int(N) + 1) if i % 2 != 0]
-    return sum(a)
-n=input()
-print(sum_nech(n))
+def sum_nech(num: str):
+    """функция сумирует неч числа до N"""
+    return sum([i for i in range(int(num) + 1) if i % 2 != 0])
+
+
+
+
+print(sum_nech(input('Введите число: ')))
