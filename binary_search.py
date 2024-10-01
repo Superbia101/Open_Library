@@ -1,9 +1,17 @@
 def binary(low_limit: int, big_limit: int):
-  """Поиск числа в отрезке через алгоритм бинарного поиска"""
+  """Поиск числа в отрезке через алгоритм бинарного поиска.
+
+  :param low_limit: arg1
+  :type low_limit: int
+  :param big_limit: arg2
+  :type big_limit: int
+
+  :return: Ничего не возвращает
+  """
   while True:
     middle: int = (low_limit + big_limit) // 2
     print('Твое число равно, меньше или больше, чем число', str(middle) + '?')
-    num: int = int(input())
+    num = int(input())
     if num == 1:
       break
     elif num == 2:
