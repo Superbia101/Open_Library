@@ -1,8 +1,12 @@
 def output_degrees_two(num: str):
-    """выводит необходимое кол-во степеней 2"""
+    """Выводит необходимое кол-во степеней 2.
+
+    :param num: arg1
+    :type num: str
+
+    :return: Выводит на экран
+    """
     print("Степени двойки: ",[2 ** i for i in range(int(num))])
-
-
 
 
 temp = input("Ведите кол-во: ")

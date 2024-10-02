@@ -1,49 +1,51 @@
-"""список из чисел, которые при делении на 5 дают в остатке 3 
-
+"""Список из чисел, которые при делении на 5 дают в остатке 3
 два варианта программы: first и second."""
-
 """first = [i for i in range(int(input("Ведите предел: "))) if i % 5 == 3]
 print(first)
 second = [5 * i + 3 for i in range(int(input("Ведите предел: ")))]
 print(second)"""
 
 """ можно усложнить"""
-#divi - делитель, введённый с клавиатуры
+#div - делитель, введённый с клавиатуры
 #rem - остаток, введённый с клавиатуры
-
-"""divi = int(input("При делении на что (больше нуля)? "))
+"""div = int(input("При делении на что (больше нуля)? "))
 rem = int(input("Остаток (должен быть меньше делителя): "))
-third = [i for i in range(int(input("Ведите предел: "))) if i % divi == rem]
+third = [i for i in range(int(input("Ведите предел: "))) if i % div == rem]
 print(third)"""
 
-""" если нужно определённое кол-во такких чисел"""
-#num - кол-во необходимых чисел
-#List - список ими заполняемый
-#divi - делитель
-#rem - остаток
-#num - кол-во
 
+def division(div: int = 2, rem: int = 1, num: int = 10) -> list[int]:
+    """Выводит список из нечётных чисел, с параметрами - числа имеют
+    определённый остаток от определённого делителя.
 
-def division(divi: int = 2, rem: int = 1, num: int = 10):
-    """выводит список из нечётных чисел, с параметрами - чисел с опред. остатком от опред. делителя"""
+    :param div: arg1 делитель
+    :type div: int
+    :param rem: arg2 остаток
+    :type rem: int
+    :param num: arg3 кол-во
+    :type num: num
+
+    :raises ValueError: if arg2 >= to arg1
+
+    :rtype: list[int]
+    :return: list_num
+    """
     list_num: list[int] = []
-    if rem >= divi:
-        print("Таких чисел не существует!")
+    if rem >= div:
+        raise ValueError("Таких чисел не существует!")
     else:
-        temp: int = 0 # число для проверки
+        temp: int = 0  # Число для проверки
         while len(list_num) < num:
-            temp += 1 # возрастание
-            if temp % divi == rem: # проверка на условия
+            temp += 1  # Возрастание
+            if temp % div == rem:  # Проверка на условия
                 list_num.append(temp)
-        print(list_num)
-
-
+        return list_num
 
 
 try:
-    divi = int(input("При делении на что (больше нуля)? "))
-    rem = int(input("Остаток (должен быть меньше делителя): "))
-    num = int(input("Введите кол-во: "))
-    division(divi, rem, num)
+    num_1 = int(input("При делении на что (больше нуля)? "))
+    num_2 = int(input("Остаток (должен быть меньше делителя): "))
+    num_3 = int(input("Введите кол-во: "))
+    print(division(num_1, num_2, num_3))
 except:
     print("Должно быть число!")

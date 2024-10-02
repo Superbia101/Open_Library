@@ -1,14 +1,24 @@
-def comparison_real_numbers(namber_sum_1: float, namber_sum_2: float, namber_raz: float):
-    """сравн. сумму двух вещ. чисел с третьим с точностью: до 15-го знака"""
-    print('\n', abs((namber_sum_1 + namber_sum_2) - namber_raz) < 1e-15)
+def comparison_real_numbers(number_sum_1: float, number_sum_2: float,
+                            number_raz: float, precision: float) -> bool:
+    """Сравнение суммы двух вещественных чисел с третьим с точностью: до 15-го знака.
 
+    :param number_sum_1: arg1
+    :type number_sum_1: float
+    :param number_sum_2: arg2
+    :type number_sum_2: float
+    :param number_raz: arg3
+    :type number_raz: float
+    :param precision: arg4
+    :type precision: float
 
+    :rtype: bool
+    :return: Если True - то сумма равна 3-ему аргументу с заданной точностью
+    """
+    return abs((number_sum_1 + number_sum_2) - number_raz) < precision
 
 
 num = 1.1
 num_2 = 2.2
 num_3 = 3.3
-#num = float(input('Введите первое число: '))
-#num_2 = float(input('Введите второе число: '))
-#num_3 = float(input('Введите третье число: '))
-comparison_real_numbers(num, num_2, num_3)
+num_4 = 1e-15
+print(comparison_real_numbers(num, num_2, num_3, num_4))

@@ -1,8 +1,6 @@
 import math
 
 
-
-
 def count_exponent_degree(quant: float) -> list[float | int]:
     """Определяет значение степени экспоненциального представления числа.
 
@@ -24,6 +22,7 @@ def count_exponent_degree(quant: float) -> list[float | int]:
     return [quant, count]
     #print(f'{quant}e{count}')
 
+
 def count_exponent_degree_2(quant: float) -> list[float | int]:
     """Определяет значение степени экспоненциального представления числа.
 
@@ -40,6 +39,7 @@ def count_exponent_degree_2(quant: float) -> list[float | int]:
     quant = quant * (-1) if flag else quant
     return [quant, count]
     #print(f'{quant}e{count}')
+
 
 def check_exponent_degree(tax: float, new_tax: float):
     """Проверка порядка экспоненциального представления после суммы.
@@ -60,8 +60,6 @@ def check_exponent_degree(tax: float, new_tax: float):
         print('Степень экспоненты суммы уменьшилась')
     else:
         print('Степень экспоненты не изменилась')
-
-
 
 
 num = float(input('Введите бюджет страны: '))

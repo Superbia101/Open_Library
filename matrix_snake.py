@@ -1,33 +1,37 @@
 def snake(line: int, column: int):
-    """создаёт и выводит матрицу заполненную числами по спирали"""
+    """Создаёт и выводит матрицу, заполненную числами по спирали.
+
+    :param line: arg1
+    :type line: int
+    :param column: arg2
+    :type column: int
+    :return: Результат выводится на экран
+    """
     list_num = [[0] * column for _ in range(line)]
     num, temp, i, j = 0, 0, 0, 0 
     while num < line * column: 
-        for j in range(temp, column - temp): # заполн. верхнего октанта
+        for j in range(temp, column - temp):  # Заполнение верхнего октанта
             if list_num[i][j] == 0:
                 num += 1
                 list_num[i][j] = num
-        for i in range(temp, line - temp): # заполн. левого октанта
+        for i in range(temp, line - temp):  # Заполн. левого октанта
             if list_num[i][j] == 0:
                 num += 1
                 list_num[i][j] = num
-        for j in range(column - 1 - temp, temp - 1, -1): # заполн. нижнего окт.
+        for j in range(column - 1 - temp, temp - 1, -1):  # Заполн. нижнего окт.
             if list_num[i][j] == 0:
                 num += 1
                 list_num[i][j] = num
-        for i in range(line - 1 - temp, temp, -1): # заполн. правого окт.
+        for i in range(line - 1 - temp, temp, -1):  # Заполн. правого окт.
             if list_num[i][j] == 0:
                 num += 1
                 list_num[i][j] = num
-        temp += 1 # переход на след. куруг
+        temp += 1  # Переход на след. круг
     print('Матрица - "змейка"!')
     for row in list_num:
         print('\t'.join([str(elem) for elem in row]))
 
 
-
-
 n, m = int(input('Введите кол-во строк: ')), int(input('Введите кол-во столбцов: '))
 print()
 snake(n, m)
-
