@@ -26,7 +26,10 @@ def prime_num(num: int) -> bool:
     :rtype: bool
     :return: flag (True or False)
     """
-    for quant in range(2, ((num + 2) // 2) + 1):
+    flag: bool = False
+    if num in (0, 1):
+        return flag
+    for quant in range(2, ((num + 1) // 2) + 1):
         if num % quant == 0:
             flag: bool = False
             break
@@ -47,7 +50,7 @@ def prime_num_list(num: int) -> list[int]:
     num_list: list[int] = []
 
     for temp in range(2, num + 1):
-        for quant in range(2, ((temp + 2) // 2) + 1):
+        for quant in range(2, ((temp + 1) // 2) + 1):
             if temp % quant == 0:
                 break
         else:
