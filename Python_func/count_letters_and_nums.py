@@ -1,4 +1,4 @@
-def count_letters_and_nums(txt: str):
+def count_letters_and_nums(txt: str) -> None:
     """Поиск и подсчёт буквы и цифры в тексте.
 
     :param txt: arg1
@@ -10,9 +10,11 @@ def count_letters_and_nums(txt: str):
     symbol = input('Какую букву ищём? ')
     ind_num: int = 0
     ind_symbol: int = 0
+
     for elem in txt:
         ind_num += 1 if elem == num else 0
         ind_symbol += 1 if elem == symbol else 0
+
     print(f'\nКоличество цифр {num}:', ind_num)
     print(f'Количество букв {symbol}:', ind_symbol)
 

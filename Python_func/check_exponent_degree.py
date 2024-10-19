@@ -41,7 +41,7 @@ def count_exponent_degree_2(quant: float) -> list[float | int]:
     #print(f'{quant}e{count}')
 
 
-def check_exponent_degree(tax: float, new_tax: float):
+def check_exponent_degree(tax: float, new_tax: float) -> None:
     """Проверка порядка экспоненциального представления после суммы.
 
     :param tax: arg1
@@ -49,7 +49,7 @@ def check_exponent_degree(tax: float, new_tax: float):
     :param new_tax: arg2
     :type new_tax: float
 
-    :return: Выводит на экран вывод
+    :return: Выводит на экран
     """
     new_tax += tax
     tax = count_exponent_degree(tax)

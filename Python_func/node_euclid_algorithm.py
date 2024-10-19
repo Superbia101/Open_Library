@@ -10,8 +10,10 @@ def node_euclid_algorithm(num_1: int, num_2: int) -> int:
     :return: num_2
     """
     num_1, num_2 = max(num_1, num_2), min(num_1, num_2)
+
     while num_1 % num_2 != 0:
         num_1, num_2 = num_2, num_1 % num_2
+
     return num_2
 
 

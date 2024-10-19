@@ -1,4 +1,4 @@
-def binary_search(low_limit: int, big_limit: int):
+def binary_search(low_limit: int, big_limit: int) -> None:
     """Поиск числа в отрезке через алгоритм бинарного поиска.
 
     :param low_limit: arg1

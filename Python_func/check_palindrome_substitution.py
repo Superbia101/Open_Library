@@ -1,5 +1,6 @@
-def check_palindrome_substitution(txt: str):
-    """Определяет, существует ли у переданной строки такая перестановка, при которой она станет палиндромом.
+def check_palindrome_substitution(txt: str) -> None:
+    """Определяет, существует ли у переданной строки такая перестановка,
+    при которой она станет палиндромом.
 
     :param txt: arg1
     :type txt: str

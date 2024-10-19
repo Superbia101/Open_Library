@@ -46,6 +46,7 @@ site = {
 }
 
 key = input('Введите искомый ключ: ')
+
 if 'y' == input('Хотите ввести максимальную глубину? Y/N: ').lower():
     val = search_key_indict(site, key, int(input('Введите максимальную глубину: ')))
 else:

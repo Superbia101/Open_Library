@@ -31,6 +31,7 @@ def division(div: int = 2, rem: int = 1, num: int = 10) -> list[int]:
     :return: list_num
     """
     list_num: list[int] = []
+
     if rem >= div:
         raise ValueError("Таких чисел не существует!")
     else:

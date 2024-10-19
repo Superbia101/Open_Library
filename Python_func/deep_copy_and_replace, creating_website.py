@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 def deep_copy_and_replace(obj: dict, new: str) \
         -> dict | int | float | bool | str | list:
     """Производит глубокое копирование заданного словаря и производит
@@ -21,10 +23,11 @@ def deep_copy_and_replace(obj: dict, new: str) \
     elif isinstance(obj, dict):
         return {key: deep_copy_and_replace(value, new) for key, value in obj.items()}
     else:
-        return copy.deepcopy(obj)
+        return deepcopy(obj)
 
 
-def creating_website(prototype: dict, replace_str: str, list_website: list[dict] = []):
+def creating_website(prototype: dict, replace_str: str,
+                     list_website: list[dict] = []) -> None:
     """Создаёт и выводит (намеренно введённый mutable list) список созданных макетов.
 
     :param prototype: arg1
@@ -34,7 +37,7 @@ def creating_website(prototype: dict, replace_str: str, list_website: list[dict]
     :param list_website: arg3 по умолчанию пустой список
     :type list_website: list[dict]
 
-    :return: Выводит результат в консоль
+    :return: Выводит результат на экран
     """
     list_website.append(deep_copy_and_replace(prototype, replace_str))
     print(list_website)

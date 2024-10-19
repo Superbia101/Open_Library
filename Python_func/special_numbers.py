@@ -28,9 +28,11 @@ def my_funk(start: int = 0, finish: int = 1000,
     """
     list_num = [sum([int(str(i)[j]) for j in range(len(str(i)))]) <
                 summa and i for i in range(start, finish + 1, num1) if i % num2 != 0]
+
     # список чисел с 3-мя условиями, но лишними False
     for i in range(list_num.count(False)):  # удаляем лишние False
         list_num.remove(False)
+
     return list_num
 
 

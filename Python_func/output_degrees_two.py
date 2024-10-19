@@ -1,4 +1,4 @@
-def output_degrees_two(num: str):
+def output_degrees_two(num: str) -> None:
     """Выводит необходимое кол-во степеней 2.
 
     :param num: arg1

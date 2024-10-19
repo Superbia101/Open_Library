@@ -32,11 +32,13 @@ def dict_freq_invert(diction: dict[str:int]) -> dict[int: list[str]]:
     return dict_invert
 
 
-def dict_print(glossary: dict):
+def dict_print(glossary: dict) -> None:
     """Выводит на экран элементы переданного словаря.
 
     :param glossary: arg1
     :type glossary: dict
+
+    :return: Выводит на экран
     """
     for key, val in glossary.items():
         print('{} : {}'.format(key, val))

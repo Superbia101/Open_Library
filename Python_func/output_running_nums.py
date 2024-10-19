@@ -29,6 +29,7 @@ def output_running_nums(symbol: list | str, num: int) -> list | str:
 
 old_list: str = input('Первая строка: ')
 new_list: str = input('Вторая строка: ')
+
 if len(old_list) == len(new_list):
     if old_list == new_list:
         print('Они одинаковы, сдвиг не нужен.')

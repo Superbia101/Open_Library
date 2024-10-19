@@ -1,7 +1,7 @@
 from random import seed, randint
 
 
-def my_list(line: int, column: int):
+def my_list(line: int, column: int) -> None:
     """Создаёт и выводит вложенный список n на m, заполн. случ. буквами.
 
     :param line: arg1
@@ -12,7 +12,9 @@ def my_list(line: int, column: int):
     :return: Выводит матрицу на экран
     """
     seed(2024)
+
     rand_list: list[list[int | str]] = [[0] * column for _ in range(line)]
+
     for i in range(line):
         for j in range(column):
             rand_list[i][j] = chr(randint(ord('A'), ord('Z')))

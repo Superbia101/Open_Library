@@ -1,6 +1,7 @@
-def merge_sorted_lists(list_1: list[int | float],
-                       list_2: [int | float]) -> list[int | float]:
-    """Объединяет два отсортированных списка чисел в один отсортированный без дубликатов.
+def merge_sorted_lists(list_1: list[int | float], list_2: [int | float]) \
+        -> list[int | float]:
+    """Объединяет два отсортированных списка чисел в один
+    отсортированный без дубликатов.
 
     :param list_1: arg1
     :type list_1: list[int | float]

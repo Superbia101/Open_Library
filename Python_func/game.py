@@ -1,7 +1,7 @@
 from random import seed, randint
 
 
-def rock_paper_scissors():
+def rock_paper_scissors() -> None:
     """Игра Камень, ножницы, бумага.
 
     :return: Взаимодействие с пользователем через консоль
@@ -28,7 +28,7 @@ def rock_paper_scissors():
             print('\nОшибка ввода!')
 
 
-def guess_the_number():
+def guess_the_number() -> None:
     """Игра "Угадай число".
 
     :return: Взаимодействие с пользователем через консоль
@@ -51,7 +51,7 @@ def guess_the_number():
             print('\nОшибка ввода!')
 
 
-def main_menu():
+def main_menu() -> None:
     """Главное меню игры.
 
     :return: Взаимодействие с пользователем через консоль

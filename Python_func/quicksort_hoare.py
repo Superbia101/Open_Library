@@ -31,8 +31,7 @@ def quicksort_hoare(works_list: list[int]) -> list[int]:
     :rtype: list[int]
     :return: Отсортированный список
     """
-    works_tuple: tuple[list[int], list[int], list[int]] \
-        = auxiliary_division_list(works_list)
+    works_tuple: tuple[list[int], list[int], list[int]] = auxiliary_division_list(works_list)
 
     temp: dict[int: list] = {}
 

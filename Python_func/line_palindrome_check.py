@@ -9,10 +9,12 @@ def line_palindrome_check(lines: str) -> bool:
     """
     text: str = ''
     temp: int = 0
+
     for j in lines.lower().split():  # Убираем лишнее
         text += j.strip(".,:;-!?")
     for i in range(len(text) // 2):  # Подсчёт одинаковых значений с начала и конца
         temp += 1 if text[i] == text[len(text) - 1 - i] else 0
+
     return temp == len(text) // 2
 
 
