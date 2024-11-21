@@ -1,5 +1,14 @@
 #from math import gcd
 
+# наивый алгоритм (линейное время работы)
+def gcd1(a, b):
+    
+    assert a >= 0 and b >= 0
+    
+    for d in reversed(range(max(a, b) + 1)):
+        if d == 0 or a % d == b % d == 0:
+            return d
+        
 
 def node_euclid_algorithm(num_1: int, num_2: int) -> int:
     """Поиск наибольшего общего делителя, через алгоритм Евклида.
@@ -9,15 +18,18 @@ def node_euclid_algorithm(num_1: int, num_2: int) -> int:
     :param num_2: arg2
     :type num_2: int
 
+    :assert: a >= 0 and b >= 0
+
     :rtype: int
     :return: num_2
     """
+
+    assert num_1 >= 0 and num_2 >= 0
     
-    num_1, num_2 = max(num_1, num_2), min(num_1, num_2)
-    temp: int = num_1 % num_2
-    while temp != 0:
-        num_1, num_2 = num_2, temp
-        temp = num_1 % num_2
+    num_1, num_2 = sorted([num_1, num_2])
+    
+    while num_1:
+        num_1, num_2 = num_2 % num_1, num_1
 
     return num_2
 

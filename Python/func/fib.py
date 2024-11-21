@@ -65,6 +65,22 @@ def memo(f):
 
 print(memo(fib_rek1)(20))
 
+# более эффективный алгоритм O(log(n)**2)
+def qfib(n, with_next=False):    
+    if n < 2:
+        response = [n, 1]
+    else:
+        fa, fb = qfib(n//2, with_next=True)
+        if n % 2 == 1:
+            response = [fa**2 + fb**2,
+                        fb * (fb + fa) + fa * fb,]
+        else:
+            response = [fa * (fb - fa) + fa * fb,
+                        fa**2 + fb**2]
+    if with_next:
+        return response
+    return response [0]
+
 
 """Даны целые числа (1 <= n <= 10**18) и (2 <= m <= 10**5), необходимо
 найти остаток от деления n-го числа Фибоначчи на m."""
