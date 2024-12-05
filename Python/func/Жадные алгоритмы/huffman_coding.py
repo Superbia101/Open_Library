@@ -1,6 +1,6 @@
 """Жадные алгоритмы"""
 from __future__ import annotations
-from typing import Optional
+from typing import Optional, List, Dict
 
 
 class TreeNode:
@@ -44,10 +44,10 @@ def huffman_coding(msg: str) -> TreeNode:
     :return: Корень бинарного дерева
     """
 
-    symbol_dict = {i: msg.count(i) for i in set(msg)}
+    symbol_dict: dict[str: int] = {i: msg.count(i) for i in set(msg)}
 
     symbol_dict = sorted(symbol_dict.items(), key=lambda x: x[1])
-    sheet_list = [TreeNode(j, i) for i, j in symbol_dict]
+    sheet_list: List[TreeNode] = [TreeNode(j, i) for i, j in symbol_dict]
 
     while len(sheet_list) != 1:
         left: TreeNode = sheet_list.pop(1)
@@ -59,7 +59,7 @@ def huffman_coding(msg: str) -> TreeNode:
     return sheet_list[0]
 
 
-def encode(node: TreeNode, s: str, huffman_code: dict[str: str]) -> None:
+def encode(node: TreeNode, s: str, huffman_code: Dict[str: str]) -> None:
     """Функция заполняет переданный словарь кодировками символов по методу Хаффмана.
 
     :param node: Корень бинарного дерева
