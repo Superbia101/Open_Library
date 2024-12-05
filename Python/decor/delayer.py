@@ -1,21 +1,23 @@
-from time import time
 from typing import Callable, Any
 from functools import wraps
+from time import sleep
 
 
-def timer(func: Callable) -> Callable:
-    """Декоратор таймер. Возвращает результат работы переданной функции, выводи на экран её время работы.
+def delayer(func: Callable) -> Callable:
+    """Декоратор, который замедляет выполнение декорируемой функции на 5 секунд.
 
     :param func: Переданная функция, которую необходимо декорировать
     :type func: Callable
 
-    :rtype: Callable
+    :rtype: Any
     :return: Результат работы декоратора (ссылка на объект реализации функции-обёртки)
     """
 
     @wraps(func)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
-        """Обёртка для декорируемой функции, осуществляющая подсчёт времени выполнения переданной функции.
+        """Обёртка для декорируемой функции, осуществляющая задержку перед вызовом.
+
+        Задерживает выполнение на 2 секунды, а затем вызывает оригинальную функцию с переданными ей аргументами.
 
         :param args: Позиционные аргументы, передаваемые в декорируемую функцию.
         :type args: Any
@@ -26,19 +28,15 @@ def timer(func: Callable) -> Callable:
         :return: Результат, возвращаемый декорируемой функцией.
         """
 
-        started_time = time()
-        result = func(*args, **kwargs)
-        ended_time = time()
-        func_time = ended_time - started_time
-        print('Время выполнения функции: {} сек.'.format(func_time))
-
-        return result
+        sleep(5)
+        return func(*args, **kwargs)
 
     return wrapper
 
-@timer
-def hard_func():
-    return [x ** 2 ** x for x in range(22)]
+
+@delayer
+def greeting(name: str) -> None:
+    print('Привет, {name}!'.format(name=name))
 
 
-hard_func()
+greeting('Tom')

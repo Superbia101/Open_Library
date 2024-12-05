@@ -1,5 +1,5 @@
 from typing import Callable, Any
-import functools 
+from functools import wraps
 
 def do_twice(func: Callable) -> Callable:
     """Декоратор двойного вызова выводящей на экран функции.
@@ -11,13 +11,20 @@ def do_twice(func: Callable) -> Callable:
     :return: Двойной вызов переданной функции
     """
 
-    @functools.wraps(func)
-    def wrapped_func(*args: Any, **kwargs: Any) -> None:
+    @wraps(func)
+    def wrapper(*args: Any, **kwargs: Any) -> None:
+        """Обёртка для декорируемой функции, осуществляющая двойной вызов переданной функции.
+
+        :param args: Позиционные аргументы, передаваемые в декорируемую функцию.
+        :type args: Any
+        :param kwargs: Именованные аргументы, передаваемые в декорируемую функцию.
+        :type kwargs: Any
+        """
+
         for _ in range(2):
             func(*args, **kwargs)
 
-    return wrapped_func
-
+    return wrapper
 
 @do_twice
 def greeting(name: str) -> None:
