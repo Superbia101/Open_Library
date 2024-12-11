@@ -9,9 +9,10 @@ def auxiliary_division_list(works_list: list[int]) \
     :rtype: tuple[list[int], list[int], list[int]]
     :return: Три списка: элементы меньше опорного, равные опорному и больше опорного
     """
+
     less_list, more_list, equal_list = [], [], []
 
-    for index, elem in enumerate(works_list):
+    for _, elem in enumerate(works_list):
         if elem < works_list[-1]:
             less_list.append(elem)
         elif elem > works_list[-1]:
@@ -31,6 +32,7 @@ def quicksort_hoare(works_list: list[int]) -> list[int]:
     :rtype: list[int]
     :return: Отсортированный список
     """
+
     works_tuple: tuple[list[int], list[int], list[int]] = auxiliary_division_list(works_list)
 
     temp: dict[int: list] = {}
