@@ -1,5 +1,5 @@
 from typing import Callable, Any
-from collections.abc import Generator
+from collections.abc import Iterable
 from contextlib import contextmanager
 import time
 
@@ -30,7 +30,7 @@ def timed(func: Callable, *args: Any, n_iter: int = 100) -> float:
 
 
 @contextmanager
-def timer() -> Generator:
+def timer() -> Iterable:
     """Функция таймер в качестве контекст-менеджера. Работает с оператором with и замерять время работы вложенного кода.
 
     :return: Возвращает время между запросами
@@ -42,7 +42,8 @@ def timer() -> Generator:
         yield
 
     finally:
-        print(time.time() - start)
+        end = time.time()
+        print(end - start)
 
 
 with timer() as t1:
