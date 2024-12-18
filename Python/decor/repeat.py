@@ -3,25 +3,25 @@ from functools import wraps
 
 
 def repeat(_func: Optional[Callable] = None, *, quantity: int = 1) -> Callable:
-    """Декоратор множественного вызова выводящей на экран функции.
+    """Функция передачи параметра декоратору.
 
-    :param _func: Переданная функция
+    :param _func: Переданная функция, в виде маркера вызова декоратора с аргументами или без
     :type _func: Optional[Callable]
     :param quantity: Кол-во вызовов
     :type quantity: int
 
     :rtype: Callable
-    :return: Объект реализации обёртки
+    :return: Объект реализации декоратора
     """
 
     def repeat_decorator(func: Callable) -> Callable:
-        """Декоратор обёртка параметра.
+        """Декоратор множественного вызова выводящей на экран функции.
 
-        :param func: Вызываемая функция, выводящая сообщение на экран
+        :param func: Вызываемая функция
         :type func: Callable
 
         :rtype: Callable
-        :return: Объект реализации внутренней обёртки
+        :return: Объект реализации обёртки
         """
 
         @wraps(func)

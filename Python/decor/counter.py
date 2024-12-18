@@ -36,9 +36,7 @@ def counter(func: Callable) -> Callable:
 
         return result
 
-    name = func.__name__
     wrapper.name = 0
-
     return wrapper
 
 @counter

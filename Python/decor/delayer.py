@@ -4,19 +4,19 @@ from time import sleep
 
 
 def delayer(_func: Optional[Callable] = None, *, time: int = 1) -> Callable:
-    """Декоратор настраиваемого замедления функции.
+    """Функция передачи параметра.
 
-    :param _func: Переданная функция
+    :param _func: Переданная функция, в виде маркера вызова декоратора с аргументами или без
     :type _func: Optional[Callable]
     :param time: Кол-во секунд ожидания
     :type time: int
 
     :rtype: Callable
-    :return: Объект реализации обёртки
+    :return: Объект реализации декоратора
     """
 
     def delayer_decorator(func: Callable) -> Callable:
-        """Декоратор обёртка параметра.
+        """Декоратор настраиваемого замедления функции.
 
         :param func: Вызываемая функция, выводящая сообщение на экран
         :type func: Callable
