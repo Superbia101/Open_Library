@@ -1,11 +1,26 @@
-def check_palindrome_substitution(txt: str) -> None:
-    """Определяет, существует ли у переданной строки такая перестановка,
-    при которой она станет палиндромом.
+from collections import Counter
 
-    :param txt: arg1
-    :type txt: str
-    :return: Выводит на экран
+
+def can_be_poly(line: str) -> bool:
+    """Функция принимает на вход строку и проверяет, можно ли путём перестановок получить из неё палиндром.
+
+    :param line: Переданная на проверку строка
+    :type line: str
+
+    :rtype: bool
+    :return: True - может быть палиндромом, False - нет.
     """
+
+    return sum(map(lambda x: x % 2, Counter(line).values())) <= 1
+
+
+def check_palindrome_substitution(txt: str) -> None:
+    """Определяет, существует ли у переданной строки такая перестановка, при которой она станет палиндромом.
+
+    :param txt: Переданная строка
+    :type txt: str
+    """
+    
     count_odd: int = 0
     len_text: int = len(txt)
     dict_origin: dict[str:int] = dict((symbol, txt.count(symbol)) for symbol in txt)
@@ -19,4 +34,7 @@ def check_palindrome_substitution(txt: str) -> None:
         print('Можно сделать палиндромом')
 
 
-check_palindrome_substitution(input('Введите строку: '))
+if __name__ == '__main__':
+    print(can_be_poly('abcba'))
+    print(can_be_poly('abbbc'))
+    check_palindrome_substitution(input('Введите строку: '))
