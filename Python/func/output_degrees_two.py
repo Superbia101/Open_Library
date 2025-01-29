@@ -4,11 +4,13 @@ def output_degrees_two(num: str) -> None:
     :param num: arg1
     :type num: str
 
-    :return: Выводит на экран
+    :return: None
     """
-    print("Степени двойки: ",[2 ** i for i in range(int(num))])
+
+    print("Степени двойки: ", [2**i for i in range(int(num))])
 
 
-temp = input("Ведите кол-во: ")
-output_degrees_two(temp)
-#print("Степени двойки: ",[2**i for i in range(int(input("Ведите кол-во: ")))])
+if __name__ == "__main__":
+    temp = input("Ведите кол-во: ")
+    output_degrees_two(temp)
+    print("Степени двойки: ", [2**i for i in range(int(input("Ведите кол-во: ")))])

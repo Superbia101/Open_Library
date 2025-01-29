@@ -1,14 +1,15 @@
 def second_max(list_num: list[int | float], first: bool = False) -> list[int | float]:
     """Функция возвращает первый/второй максимум и его индекс из переданного списка.
 
-    :param list_num: arg1
+    :param list_num: Список значений
     :type list_num: list[int | float]
-    :param first: arg2
+    :param first: Флаг работы функции
     :type first: bool
 
     :rtype: list[int | float]
     :return: list(max, index(max))
     """
+
     if first:  # Если функции передан второй аргумент - возвращает второй макс
         list_num.remove(max(list_num))
 
@@ -18,12 +19,13 @@ def second_max(list_num: list[int | float], first: bool = False) -> list[int | f
 def second_max_modified(list_num: list | tuple) -> list[tuple]:
     """Функция возвращает первый и второй максимум и, их индексы из списка.
 
-    :param list_num: arg1
+    :param list_num: Список значений
     :type list_num: list | tuple
 
     :rtype: list[tuple]
-    :return: list(tuple(max, index), tuple(max2, index2))
+    :return: Максимумы списка: 1-й, его индекс и 2-рой, и его индекс
     """
+
     first, second = list_num[:2]  # Берём первое и второе значение из списка
     f_index, s_index = 0, 1  # Значения индексов
 
@@ -42,6 +44,7 @@ def second_max_modified(list_num: list | tuple) -> list[tuple]:
     return [(first, f_index), (second, s_index)]
 
 
-a: list[int] = [1, 2, 3, 4, 5, 23, 6, 7, 3, 89, 4]
-#print(*second_max(a,1))
-print(second_max_modified(a))
+if __name__ == "__main__":
+    a: list[int] = [1, 2, 3, 4, 5, 23, 6, 7, 3, 89, 4]
+    #print(*second_max(a,1))
+    print(second_max_modified(a))

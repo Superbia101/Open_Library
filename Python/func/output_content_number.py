@@ -1,11 +1,12 @@
 def output_content_number(num: int) -> None:
     """Определяет сколько в целом числе различных цифр и выводит на экран.
 
-    :param num: arg1
+    :param num: Число
     :type num: int
 
-    :return: Выводит результат на экран
+    :return: None
     """
+
     count: dict[int, int] = dict()
 
     while num != 0:
@@ -16,5 +17,6 @@ def output_content_number(num: int) -> None:
         print(key, " - ", val)
 
 
-n = int(input('Введите целое число большой разрядности: '))
-output_content_number(n)
+if __name__ == "__main__":
+    n = int(input("Введите целое число большой разрядности: "))
+    output_content_number(n)

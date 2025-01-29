@@ -1,15 +1,17 @@
 def output_nums(num: int) -> None:
-    """Выводит на экран все числа от 1 до переданного.
+    """Выводит на экран все числа от 1 до переданного. Рекурсивно.
 
-    :param num: arg
+    :param num: Переданное значение
     :type num: int
 
-    :return: Выводит на экран
+    :return: None
     """
+
     if num != 1:
         output_nums(num - 1)
 
-    print(num, end='\n\n')
+    print(num, end="\n\n")
 
 
-output_nums(int(input('Введите num: ')))
+if __name__ == "__main__":
+    output_nums(int(input("Введите num: ")))

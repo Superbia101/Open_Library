@@ -31,5 +31,6 @@ def сhange_working_directory(new_path: str) -> Iterable:
         chdir(old_path)
 
 
-with сhange_working_directory('C:\\') as a:
-    print(listdir())
+if __name__ == "__main__":
+    with сhange_working_directory('C:\\') as a:
+        print(listdir())

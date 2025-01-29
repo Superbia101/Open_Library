@@ -1,12 +1,16 @@
-def auxiliary_division_list(works_list: list[int]) \
-        -> tuple[list[int], list[int], list[int]]:
+from typing import List, Tuple, Dict
+
+
+def auxiliary_division_list(
+    works_list: List[int],
+) -> Tuple[list[int], ...]:
     """Принимает на вход список, а возвращает три списка с элементами меньше,
     равными и больше опорного. Опорный элемент - крайний правый.
 
     :param works_list: arg1 Исходный список
-    :type works_list: list[int]
+    :type works_list: List[int]
 
-    :rtype: tuple[list[int], list[int], list[int]]
+    :rtype: Tuple[list[int], ...]
     :return: Три списка: элементы меньше опорного, равные опорному и больше опорного
     """
 
@@ -23,19 +27,19 @@ def auxiliary_division_list(works_list: list[int]) \
     return less_list, equal_list, more_list
 
 
-def quicksort_hoare(works_list: list[int]) -> list[int]:
+def quicksort_hoare(works_list: List[int]) -> List[int]:
     """Алгоритм быстрой сортировки (сортировка Хоара), опорный элемент крайний правы.
 
     :param works_list: arg1 Список для сортировки
-    :type works_list: list[int]
+    :type works_list: List[int]
 
-    :rtype: list[int]
+    :rtype: List[int]
     :return: Отсортированный список
     """
 
-    works_tuple: tuple[list[int], list[int], list[int]] = auxiliary_division_list(works_list)
+    works_tuple: Tuple[list[int], ...] = auxiliary_division_list(works_list)
 
-    temp: dict[int: list] = {}
+    temp: Dict[int:list] = {}
 
     for index in [0, 2]:
         for num in works_tuple[index][:-1]:
@@ -48,7 +52,8 @@ def quicksort_hoare(works_list: list[int]) -> list[int]:
     return temp[0] + works_tuple[1] + temp[2]
 
 
-# num_list = [5, 8, 9, 4, 2, 9, 1, 8]
-num_list = [1, 105, 8, 9, 4, 10, 11, 34, 99, 2, 2, 9, 1, 8]
-print('Исходный список:', num_list)
-print('Отсортированный список:', quicksort_hoare(num_list))
+if __name__ == "__main__":
+    # num_list = [5, 8, 9, 4, 2, 9, 1, 8]
+    num_list = [1, 105, 8, 9, 4, 10, 11, 34, 99, 2, 2, 9, 1, 8]
+    print("Исходный список:", num_list)
+    print("Отсортированный список:", quicksort_hoare(num_list))

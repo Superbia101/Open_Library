@@ -5,11 +5,12 @@ def element_insert(num: int) -> None:
     """Между каждой парой элементов списка заданной длины
     вставляется новый, равный сумме соседних.
 
-    :param num: arg1
+    :param num: Длина списка
     :type num: int
 
-    :return: Вывод на экран списка
+    :return: None
     """
+
     seed(2024)
 
     list_1: list[int] = [randint(0, 9) for _ in range(num)]  # Создаём случ. список
@@ -25,4 +26,5 @@ def element_insert(num: int) -> None:
     print('Результат:', list_2)
 
 
-element_insert(10)
+if __name__ == '__main__':
+    element_insert(10)

@@ -7,6 +7,7 @@ def line_palindrome_check(lines: str) -> bool:
     :rtype: bool
     :return: True - строка палиндром, False - строка не палиндром
     """
+
     text: str = ''
     temp: int = 0
 
@@ -18,8 +19,9 @@ def line_palindrome_check(lines: str) -> bool:
     return temp == len(text) // 2
 
 
-#t = input('Введите строку: ')
-#t = 'казак'
-t = ' Я не стар, брат Сеня!'
-print(t)
-print(line_palindrome_check(t))
+if __name__ == '__main__':
+    #t = input('Введите строку: ')
+    #t = 'казак'
+    t = ' Я не стар, брат Сеня!'
+    print(t)
+    print(line_palindrome_check(t))

@@ -20,10 +20,13 @@ def deep_copy_and_replace(obj: Dict, new: str, old: str) -> Any:
         if isinstance(obj, str) and old in obj:
             obj = obj.replace(old, new)
         return obj
+
     elif isinstance(obj, list):
         return [deep_copy_and_replace(item, new, old) for item in obj]
+
     elif isinstance(obj, dict):
         return {key: deep_copy_and_replace(value, new, old) for key, value in obj.items()}
+
     else:
         return deepcopy(obj)
 

@@ -6,10 +6,12 @@ def zip_output(name: str) -> None:
     """Распаковывает в текущий каталог архив.
 
     :param name: Наименование распаковываемого архива
+    :type name: str
 
-    :return: Распаковывает в текущий каталог
+    :return: None
     """
-    with ZipFile(name, 'r') as v_i_m_zip:
+
+    with ZipFile(name) as v_i_m_zip:
         v_i_m_zip.extractall()
 
 
@@ -20,11 +22,12 @@ def frequency_analysis(name: str) -> None:
     :param name: Наименование анализируемого документа
     :type name: str
 
-    :return: Запись в файл analysis.txt
+    :return: None
     """
+
     symbol_dict: dict[str: int] = dict()
     symbol_list: list[tuple] = []
-    file = open(name, 'r', encoding='utf-8')
+    file = open(name, encoding='utf-8')
 
     for i_line in file:
         for symbol in i_line:
@@ -49,10 +52,12 @@ def frequency_analysis(name: str) -> None:
     wr_file.close()
 
 
-zipp: str = 'voina-i-mir.zip'  # адрес архива
-file_in_zipp: str = 'voyna-i-mir.txt'  # адрес файла
-if os.path.exists(os.path.abspath(zipp)) and not os.path.exists(os.path.abspath(file_in_zipp)):
-    zip_output(zipp)
+if __name__ == '__main__':
+    zipp: str = 'voina-i-mir.zip'  # адрес архива
+    file_in_zipp: str = 'voyna-i-mir.txt'  # адрес файла
 
-if os.path.exists(os.path.abspath(file_in_zipp)):
-    frequency_analysis(file_in_zipp)
+    if os.path.exists(os.path.abspath(zipp)) and not os.path.exists(os.path.abspath(file_in_zipp)):
+        zip_output(zipp)
+
+    if os.path.exists(os.path.abspath(file_in_zipp)):
+        frequency_analysis(file_in_zipp)

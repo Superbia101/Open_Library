@@ -1,11 +1,12 @@
 def output_factorial(num: int) -> None:
-    """Факториал числа.
+    """Факториал переданного числа выводится на экран.
 
-    :param num: arg1
+    :param num: Число
     :type num: int
 
-    :return: Выводит на экран
+    :return: None
     """
+
     comp: int = 1
 
     if num > 0:
@@ -15,6 +16,6 @@ def output_factorial(num: int) -> None:
     else:
         print("Отрицательное - не подходит!")
 
-
-temp = int(input("Введите число: "))
-output_factorial(temp)
+if __name__ == "__main__":
+    temp = int(input("Введите число: "))
+    output_factorial(temp)

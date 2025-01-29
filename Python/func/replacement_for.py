@@ -20,8 +20,7 @@ def replacement_for(iter_obj: Iterable) -> None:
             break
 
 
-
-
-replacement_for([1, 2, 3, 4, 5, 9])
-print()
-replacement_for((['1'], 2, 'abc', [1, 2], True))
+if __name__ == "__main__":
+    replacement_for([1, 2, 3, 4, 5, 9])
+    print()
+    replacement_for((["1"], 2, "abc", [1, 2], True))

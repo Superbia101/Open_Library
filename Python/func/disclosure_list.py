@@ -1,12 +1,16 @@
-def disclosure_list(lists: list) -> list:
+from typing import List
+
+
+def disclosure_list(lists: List) -> List:
     """Раскрывает многомерный список любой вложенности.
     
-    :param lists: arg
-    :type lists: list
+    :param lists: Многомерный список
+    :type lists: List
     
-    :rtype: list
-    :return: lists
+    :rtype: List
+    :return: Одномерный список
     """
+
     for index, elem in enumerate(lists):
 
         if isinstance(elem, (list, tuple)):
@@ -16,7 +20,7 @@ def disclosure_list(lists: list) -> list:
     return lists
 
 
-nice_list = [1, 2, [3, 4], [[5, 6, 7], [8, 9, 10]],
-             [[11, 12, 13], [14, 15], [16, 17, 18]]]
-
-print('Ответ:', disclosure_list(nice_list))
+if __name__ == "__main__":
+    nice_list = [1, 2, [3, 4], [[5, 6, 7], [8, 9, 10]],
+                 [[11, 12, 13], [14, 15], [16, 17, 18]]]
+    print('Ответ:', disclosure_list(nice_list))

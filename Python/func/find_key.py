@@ -1,14 +1,18 @@
-def find_key(diction: dict, key: str | int | tuple) -> dict | str:
+from typing import Dict, Union, Tuple, Any
+
+
+def find_key(diction: Dict, key: Union[str, int, Tuple]) -> Any:
     """Поиск во вложенном словаре записи по ключу.
 
-    :param diction: arg1
-    :type diction: dict
-    :param key: arg2
-    :type key: str | int | tuple
+    :param diction: Словарь
+    :type diction: Dict
+    :param key: Искомый ключ
+    :type key:  Union[str, int, Tuple]
 
-    :rtype:
-    :return:
+    :rtype: Any
+    :return: Значение ключа
     """
+
     if key in diction:
         return diction[key]
 
@@ -23,29 +27,30 @@ def find_key(diction: dict, key: str | int | tuple) -> dict | str:
     return result
 
 
-site = {
+if __name__ == '__main__':
+    site = {
 
-    'html': {
+        'html': {
 
-        'head': {
+            'head': {
 
-            'title': 'Мой сайт'
+                'title': 'Мой сайт'
 
-        },
+            },
 
-        'body': {
+            'body': {
 
-            'h2': 'Здесь будет мой заголовок',
+                'h2': 'Здесь будет мой заголовок',
 
-            'div': 'Тут, наверное, какой-то блок',
+                'div': 'Тут, наверное, какой-то блок',
 
-            'p': 'А вот здесь новый абзац'
+                'p': 'А вот здесь новый абзац'
+
+            }
 
         }
 
     }
 
-}
-
-val = find_key(site, input('Искомый ключ: '))
-print(val) if val else print('Такого ключа в структуре сайта нет.')
+    val = find_key(site, input('Искомый ключ: '))
+    print(val) if val else print('Такого ключа в структуре сайта нет.')

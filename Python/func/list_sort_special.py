@@ -4,11 +4,12 @@ from random import seed, randint
 def sort_special(num: int) -> None:
     """Создаёт случ список и преобразовывает в перемежающуюся последовательность.
 
-    :param num: arg1
+    :param num: Длина списка
     :type num: int
 
-    :return: Выводит список на экран
+    :return: None
     """
+
     seed(2024)
 
     rand_list: list[int] = [randint(0, 9) for _ in range(num)]  # Создаём случ. список
@@ -29,5 +30,6 @@ def sort_special(num: int) -> None:
     print('Итоговый список:', fin_list)
 
 
-sort_special(20)
+if __name__ == '__main__':
+    sort_special(20)
     

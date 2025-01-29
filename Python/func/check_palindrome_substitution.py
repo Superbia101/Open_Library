@@ -1,4 +1,5 @@
 from collections import Counter
+from typing import Dict
 
 
 def can_be_poly(line: str) -> bool:
@@ -23,13 +24,15 @@ def check_palindrome_substitution(txt: str) -> None:
     
     count_odd: int = 0
     len_text: int = len(txt)
-    dict_origin: dict[str:int] = dict((symbol, txt.count(symbol)) for symbol in txt)
+    dict_origin: Dict[str:int] = dict((symbol, txt.count(symbol)) for symbol in txt)
 
     for val in dict_origin.values():
         count_odd += 1 if val % 2 != 0 else 0
+
         if count_odd > 0 and len_text % 2 == 0 or count_odd > 1 and len_text % 2 != 0:
             print('Нельзя сделать палиндромом')
             break
+
     else:
         print('Можно сделать палиндромом')
 

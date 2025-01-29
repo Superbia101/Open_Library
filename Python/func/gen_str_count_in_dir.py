@@ -33,5 +33,6 @@ def str_count_in_dir(str_path: str = abspath('.')) -> Generator[int]:
         print(err)
 
 
-for file in str_count_in_dir(str_path='..\\01_num_squares'):
-    print(file)
+if __name__ == '__main__':
+    for file in str_count_in_dir(str_path='..\\01_num_squares'):
+        print(file)

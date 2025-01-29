@@ -4,17 +4,18 @@ from random import seed, randint
 def matrix_redact(line: int, column: int, re_line: int, re_column: int) -> None:
     """Создаёт и выводит вложенный список n на m, у которого удаляется заданные строка и столбец.
 
-    :param line: arg1
+    :param line: Кол-во строк
     :type line: int
-    :param column: arg2
+    :param column: Кол-во столбцов
     :type column: int
-    :param re_line: arg3
+    :param re_line: Удаляемая строка
     :type re_line: int
-    :param re_column: arg4
+    :param re_column: Удаляемый столбец
     :type: re_column: int
 
-    :return: Выводит результат на экран
+    :return: None
     """
+
     seed(2024)
 
     rand_list: list[list[int]] = [[randint(0, 9) for _ in range(column)] for _ in range(line)]
@@ -33,4 +34,5 @@ def matrix_redact(line: int, column: int, re_line: int, re_column: int) -> None:
         print(' '.join([str(elem) for elem in row]))
 
 
-matrix_redact(5, 7, 3, 3)
+if __name__ == '__main__':
+    matrix_redact(5, 7, 3, 3)

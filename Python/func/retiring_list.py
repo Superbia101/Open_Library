@@ -3,14 +3,15 @@ def retiring_list(men_num: int, rem_num: int) -> int:
     производит удаление элементов списка правилом очерёдности
     на основе второго аргумента, передаёт последнее значение.
 
-    :param men_num: arg1
+    :param men_num: Кол-во элементов
     :type men_num: int
-    :param rem_num: arg2
+    :param rem_num: Шаг удаления
     :type rem_num: int
 
     :rtype: int
     :return: Последний элемент последовательности
     """
+
     men_list: list[int] = [num for num in range(1, men_num + 1)]
     num_start: int = 1
     
@@ -25,7 +26,8 @@ def retiring_list(men_num: int, rem_num: int) -> int:
     return men_list[0]
 
 
-n_num = int(input('Кол-во человек: '))
-k_num = int(input('Какое число в считалке? '))
-print(f'Значит, выбывает каждый {k_num}-й человек', end='\n\n')
-print('Остался человек под номером', retiring_list(n_num, k_num))
+if __name__ == "__main__":
+    n_num = int(input('Кол-во человек: '))
+    k_num = int(input('Какое число в считалке? '))
+    print(f'Значит, выбывает каждый {k_num}-й человек', end='\n\n')
+    print('Остался человек под номером', retiring_list(n_num, k_num))

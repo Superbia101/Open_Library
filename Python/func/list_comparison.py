@@ -1,14 +1,18 @@
-def list_comparison(list_1: list[int], list_2: list[int]) -> bool:
+from typing import List
+
+
+def list_comparison(list_1: List[int], list_2: List[int]) -> bool:
     """Сравниваются (на предмет равенства) два числовых списка.
 
-    :param list_1: arg1
-    :type list_1: list[int]
-    :param list_2: arg2
-    :type list_2: list[int]
+    :param list_1: Первый список
+    :type list_1: List[int]
+    :param list_2: Второй список
+    :type list_2: List[int]
 
     :rtype: bool
-    :return: flag
+    :return: True | False
     """
+
     x: int = 0
     flag: bool = False
 
@@ -21,6 +25,7 @@ def list_comparison(list_1: list[int], list_2: list[int]) -> bool:
     return flag
 
 
-a = [1, 2, 0, 6]
-b = [1, 2, 0, 6, 8]
-print(list_comparison(a, b))
+if __name__ == '__main__':
+    a = [1, 2, 0, 6]
+    b = [1, 2, 0, 6, 8]
+    print(list_comparison(a, b))

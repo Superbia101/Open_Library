@@ -1,16 +1,17 @@
 def conversion_number(num: int, quant: int) -> str:
     """Переводит число в необходимую систему счисления до 36-й.
 
-    :param num: arg1
+    :param num: Число
     :type num: int
-    :param quant: arg2
+    :param quant: Система счисления до 36
     :type quant: int
 
     :raises ValueError: quant > 36
 
     :rtype: str
-    :return: new_num
+    :return: То же число в заданной системе
     """
+
     if quant > 36:
         raise ValueError('Ошибка! Недопустимая система счисления.')
 
@@ -24,6 +25,7 @@ def conversion_number(num: int, quant: int) -> str:
     return new_num
 
 
-a: int = int(input('Число: '))
-b: int = int(input('Основание системы счисления: '))
-print(conversion_number(a, b))
+if __name__ == "__main__":
+    a: int = int(input('Число: '))
+    b: int = int(input('Основание системы счисления: '))
+    print(conversion_number(a, b))

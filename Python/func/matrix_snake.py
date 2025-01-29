@@ -1,13 +1,14 @@
 def snake(line: int, column: int) -> None:
     """Создаёт и выводит матрицу, заполненную числами по спирали.
 
-    :param line: arg1
+    :param line: Кол-во строк
     :type line: int
-    :param column: arg2
+    :param column: Кол-во столбцов
     :type column: int
 
-    :return: Результат выводится на экран
+    :return: None
     """
+
     list_num = [[0] * column for _ in range(line)]
 
     num, temp, i, j = 0, 0, 0, 0
@@ -41,6 +42,7 @@ def snake(line: int, column: int) -> None:
         print('\t'.join([str(elem) for elem in row]))
 
 
-n, m = int(input('Введите кол-во строк: ')), int(input('Введите кол-во столбцов: '))
-print()
-snake(n, m)
+if __name__ == '__main__':
+    n, m = int(input('Введите кол-во строк: ')), int(input('Введите кол-во столбцов: '))
+    print()
+    snake(n, m)

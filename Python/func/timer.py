@@ -46,5 +46,6 @@ def timer() -> Iterable:
         print(end - start)
 
 
-with timer() as t1:
-    pass
+if __name__ == "__main__":
+    with timer() as t1:
+        pass

@@ -1,16 +1,20 @@
-def output_param_func(func, start: int, end: int) -> list[int | float]:
+from typing import Tuple
+
+
+def output_param_func(func, start: int, end: int) -> Tuple[int, float]:
     """max и min значение переданной функции в целочисленных точках диапазона.
 
-    :param func: arg1
+    :param func: Переданная функция
     :type func: lambda
-    :param start: arg2
+    :param start: Нижняя граница диапазона
     :type start: int
-    :param end: arg3
+    :param end: Верхняя граница диапазона
     :type end: int
 
-    :rtype: list[int | float]
+    :rtype: Tuple[int, float]
     :return: lisr(max, min)
     """
+
     if start > end:
         start, end = end, start
 
@@ -20,9 +24,10 @@ def output_param_func(func, start: int, end: int) -> list[int | float]:
         maxx = func(i) if maxx < func(i) else maxx
         minn = func(i) if minn > func(i) else minn
 
-    return [maxx, minn]
+    return maxx, minn
 
 
-A = 1
-B = 10
-print(output_param_func(lambda n: 2 * n - 10, A, B))
+if __name__ == "__main__":
+    A = 1
+    B = 10
+    print(output_param_func(lambda n: 2 * n - 10, A, B))

@@ -3,7 +3,9 @@ from os import walk, sep
 from os.path import abspath, exists, join
 
 
-def gen_files_path(desired_dir_name: str, str_path: str = abspath(sep)) -> Generator[str]:
+def gen_files_path(
+    desired_dir_name: str, str_path: str = abspath(sep)
+) -> Generator[str]:
     """Функция-генератор которая рекурсивно проходит по всем каталогам (включая вложенные папки и подпапки) указанной
     директории (по умолчанию — корневой диск), находит указанный пользователем каталог и генерирует пути всех
     встреченных файлов.
@@ -21,7 +23,7 @@ def gen_files_path(desired_dir_name: str, str_path: str = abspath(sep)) -> Gener
 
     try:
         if not exists(str_path):
-            raise FileNotFoundError('Ошибка! Такой директории не существует.')
+            raise FileNotFoundError("Ошибка! Такой директории не существует.")
 
         for dir_path, dir_names, files in walk(str_path):
 
@@ -37,5 +39,8 @@ def gen_files_path(desired_dir_name: str, str_path: str = abspath(sep)) -> Gener
         print(err)
 
 
-for i in gen_files_path('User', ):
-    print(i)
+if __name__ == "__main__":
+    for i in gen_files_path(
+        "User",
+    ):
+        print(i)
